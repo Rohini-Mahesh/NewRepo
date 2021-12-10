@@ -1,0 +1,8 @@
+Resources:
+    DigitalCloud:
+        Type: AWS::S3::Bucket
+        Properties:
+          AccessControl: PublicRead
+          WebConfiguration:
+              IndexDocument: index.html
+              ErrorDocument: error.html
