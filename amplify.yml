@@ -1,0 +1,19 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install -g pkg-foo
+        - pkg-foo deploy
+        - yarn run build
+        - npm ci
+    build:
+      commands:
+        - npm run generate
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
